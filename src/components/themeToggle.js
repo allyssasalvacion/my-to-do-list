@@ -1,12 +1,12 @@
 import React from "react";
-import { ThemeContext } from "./themeContext";
+import { ThemeContext } from "./ThemeContext";
 import { Switch } from "antd";
 
 const Toggle = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);
 
   return (
-    <div className="transition duration-500 ease-in-out rounded-full p-2">
+    <div className="transition duration-500 ease-in-out rounded-full">
       <Switch
         checkedChildren="🌼"
         unCheckedChildren="🌙"

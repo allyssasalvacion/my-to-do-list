@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     colors: {
       accent: "#582be8",
+      red: "#d73a49",
 
       // dark background palette
       dark_background: "#090d11",
@@ -16,8 +17,8 @@ module.exports = {
 
       // dark text palette
       dark_primary: "#fff",
-      dark_secondary: "#ffffcc",
-      dark_tertiary: "#ffff99",
+      dark_secondary: "#8b949e",
+      dark_tertiary: "#ffffff99",
 
       // dark border
       dark_border: "#30363d",
