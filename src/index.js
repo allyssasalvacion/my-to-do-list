@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { Button } from "antd";
 import { ThemeProvider } from "./components/ThemeContext";
 import Background from "./components/Background";
 import Sidebar from "./components/Sidebar";
@@ -12,7 +13,18 @@ ReactDOM.render(
     <ThemeProvider>
       <Background>
         <Sidebar />
-        <main className="w-full">
+        <main className="w-full relative overflow-y-auto">
+          <div className="absolute right-0 top-0 mr-8 mt-8 md:mr-6 md:mt-6">
+            <Button
+              type="primary"
+              className="hover:opacity-80"
+              style={{
+                background: "#582be8",
+              }}
+            >
+              Add task
+            </Button>
+          </div>
           <App />
         </main>
       </Background>

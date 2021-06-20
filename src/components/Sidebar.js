@@ -11,7 +11,7 @@ const Sidebar = () => {
         </h1>
         <Toggle />
       </div>
-      <div className="flex-grow py-6 gap-6 md:block md:overflow-y-auto">
+      <div className="flex-grow py-9 gap-6 md:block md:overflow-y-auto">
         <Category icon="📌" name="Work" />
         <Category icon="✏️" name="School" />
         <Category icon="🏡" name="Home" />
