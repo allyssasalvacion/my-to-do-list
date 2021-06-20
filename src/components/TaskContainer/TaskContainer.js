@@ -23,13 +23,12 @@ const TaskContainer = ({ task, note }) => {
 
   return (
     <div className="flex flex-col gap-5 p-6 rounded border bg-light_container dark:bg-dark_container border-light_border dark:border-dark_border">
-      <header className="w-full flex items-center justify-between">
-        <div className="flex items-center gap-5">
-          <Checkbox onChange={onChange} />
-          <h4 className="text-lg text-semibold m-0 text-light_primary dark:text-dark_primary">
+      <header className="w-full flex items-start justify-between">
+        <Checkbox onChange={onChange}>
+          <h4 className="text-lg text-semibold break-normal sm:break-words md:break-all lg:truncate xl:break-normal pl-3 m-0 text-light_primary dark:text-dark_primary">
             {task}
           </h4>
-        </div>
+        </Checkbox>
         <Dropdown overlay={menu} placement="bottomRight">
           <Button type="link" shape="circle" icon={<MenuOutlined />} />
         </Dropdown>

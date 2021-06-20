@@ -1,0 +1,13 @@
+.ant-picker {
+  @apply bg-light_background dark:bg-dark_container dark:border-dark_border;
+}
+.ant-picker-input, .ant-picker-suffix {
+  @apply dark:text-dark_primary
+}
+.ant-picker input, .ant-input-textarea::after {
+  @apply dark:text-dark_primary;
+}
+
+.ant-input-textarea::after {
+  @apply font-inter text-xs mt-2;
+}

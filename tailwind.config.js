@@ -7,6 +7,7 @@ module.exports = {
     colors: {
       accent: "#582be8",
       red: "#d73a49",
+      transparent: "transparent",
 
       // dark background palette
       dark_background: "#090d11",
