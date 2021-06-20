@@ -8,9 +8,10 @@ const Toggle = () => {
   return (
     <div className="transition duration-500 ease-in-out rounded-full p-2">
       <Switch
-        checkedChildren="🌤"
+        checkedChildren="🌼"
         unCheckedChildren="🌙"
         className="cursor-pointer"
+        style={{ background: "#582be8" }}
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       />
     </div>
