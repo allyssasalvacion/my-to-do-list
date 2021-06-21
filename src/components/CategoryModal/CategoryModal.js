@@ -13,7 +13,7 @@ const CategoryModal = ({ visible, handleOk, handleCancel, confirmLoading }) => {
       <div className="grid gap-2 grid-cols-12">
         <div className="col-span-2">
           <p>Icon</p>
-          <Input size="large" maxLength={1} />
+          <Input size="large" maxLength={2} />
         </div>
         <div className="col-span-10">
           <p>Title</p>
