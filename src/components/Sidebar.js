@@ -6,23 +6,9 @@ import { Button } from "antd";
 
 const Sidebar = () => {
   const [visible, setVisible] = React.useState(false);
-  const [confirmLoading, setConfirmLoading] = React.useState(false);
 
   const showModal = () => {
     setVisible(true);
-  };
-
-  const handleOk = () => {
-    setConfirmLoading(true);
-    setTimeout(() => {
-      setVisible(false);
-      setConfirmLoading(false);
-    }, 2000);
-  };
-
-  const handleCancel = () => {
-    console.log("Clicked cancel button");
-    setVisible(false);
   };
 
   return (
@@ -47,12 +33,7 @@ const Sidebar = () => {
         Add category
       </Button>
       {visible ? (
-        <CategoryModal
-          visible={visible}
-          handleOk={handleOk}
-          handleCancel={handleCancel}
-          confirmLoading={confirmLoading}
-        />
+        <CategoryModal visible={visible} setVisible={setVisible} />
       ) : (
         <div></div>
       )}

@@ -1,5 +1,5 @@
 import { Menu, Button, Dropdown, Checkbox, message } from "antd";
-import { MenuOutlined, UserOutlined } from "@ant-design/icons";
+import { MenuOutlined, DeleteOutlined } from "@ant-design/icons";
 import "./index.css";
 
 const TaskContainer = ({ task, note }) => {
@@ -15,7 +15,7 @@ const TaskContainer = ({ task, note }) => {
 
   const menu = (
     <Menu onClick={handleMenuClick}>
-      <Menu.Item key="1" icon={<UserOutlined />}>
+      <Menu.Item key="1" icon={<DeleteOutlined />}>
         Delete task
       </Menu.Item>
     </Menu>

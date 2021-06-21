@@ -11,9 +11,14 @@
   left: 32%;
 }
 .ant-btn-link {
-  color: #582be8;
+  @apply text-accent;
 }
 .ant-btn-link:hover {
-  color: #582be8;
-  opacity: .8;
+  @apply text-accent opacity-80;
+}
+.ant-btn, .ant-message-success, .ant-modal-close-x {
+  @apply flex items-center justify-center;
+}
+.ant-modal-footer {
+  @apply flex justify-end;
 }
