@@ -62,7 +62,7 @@ const CategoryModal = ({ visible, setVisible }) => {
       >
         <div className="grid gap-2 grid-cols-12">
           <div className="col-span-4">
-            <p>Icon</p>
+            <p className="text-light_primary dark:text-dark_primary">Icon</p>
             <Form.Item
               name="icon"
               rules={[
@@ -76,7 +76,7 @@ const CategoryModal = ({ visible, setVisible }) => {
             </Form.Item>
           </div>
           <div className="col-span-8">
-            <p>Title</p>
+            <p className="text-light_primary dark:text-dark_primary">Title</p>
             <Form.Item
               name="title"
               rules={[
