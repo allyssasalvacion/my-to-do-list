@@ -50,9 +50,7 @@ function App() {
         )}
       </div>
       <div className="flex flex-col gap-20 justify-center items-center pb-12">
-        <DayContainer date="Today" />
-        <DayContainer date="Tomorrow" />
-        <DayContainer date="June 22, 2021" />
+        <DayContainer date="Today, June 22" />
       </div>
     </div>
   );

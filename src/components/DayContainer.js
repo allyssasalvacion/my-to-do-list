@@ -14,6 +14,12 @@ const DayContainer = ({ date }) => {
         <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
         <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
         <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
+        <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
+        <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
+        <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
+        <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
+        <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
+        <TaskContainer task="Wash dishes" note="Lorem ipsum dolor sit amet" />
       </div>
     </section>
   );
