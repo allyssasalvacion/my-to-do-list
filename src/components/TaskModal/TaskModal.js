@@ -1,30 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Modal, Input, Form } from "antd";
 import "./index.css";
+import { db } from "./firebase-config.js";
 
 const { TextArea } = Input;
 
-// reset form fields when modal is form, closed
-const useResetFormOnCloseModal = ({ form, visible }) => {
-  const prevVisibleRef = useRef();
-  useEffect(() => {
-    prevVisibleRef.current = visible;
-  }, [visible]);
-  const prevVisible = prevVisibleRef.current;
-  useEffect(() => {
-    if (!visible && prevVisible) {
-      form.resetFields();
-    }
-  }, [visible, form, prevVisible]);
-};
-
 const TaskModal = ({ visible, setVisible, saveTask }) => {
   const [form] = Form.useForm();
-
-  useResetFormOnCloseModal({
-    form,
-    visible,
-  });
 
   const handleOk = () => {
     form.submit();
@@ -38,6 +20,7 @@ const TaskModal = ({ visible, setVisible, saveTask }) => {
     console.log("Success:", values);
     setVisible(false);
     saveTask(values);
+    db.collection();
   };
 
   const onFinishFailed = (errorInfo) => {
