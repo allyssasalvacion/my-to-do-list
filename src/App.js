@@ -21,7 +21,7 @@ function App() {
     <div className="flex flex-col p-8 mx-auto font-inter w-full h-full">
       <div className="flex justify-between mb-8">
         <h3 className="font-bold text-4xl m-0 text-light_primary dark:text-dark_primary">
-          Good morning, Allyssa!
+          こんにちは、アリッサ 🌼
         </h3>
         <div className="flex gap-8 items-center">
           <Toggle />
