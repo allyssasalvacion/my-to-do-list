@@ -1,24 +1,29 @@
+import React from "react";
 import { Menu, Button, Dropdown, Checkbox, message } from "antd";
 import { MenuOutlined, DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import "./index.css";
 
 const TaskContainer = ({ task }) => {
+  const [finished, setFinished] = React.useState(false);
+
   function onChange(e) {
-    e.target.checked
-      ? message.success("Task checked")
-      : message.success("Task unchecked");
+    e.target.checked ? setFinished(true) : setFinished(false);
   }
 
-  function handleMenuClick(e) {
+  function handleEditClick(e) {
+    message.success("Task edited");
+  }
+
+  function handleDeleteClick(e) {
     message.success("Task deleted");
   }
 
   const menu = (
-    <Menu onClick={handleMenuClick}>
-      <Menu.Item key="1" icon={<EditOutlined />}>
+    <Menu>
+      <Menu.Item key="1" icon={<EditOutlined />} onClick={handleEditClick}>
         Edit task
       </Menu.Item>
-      <Menu.Item key="2" icon={<DeleteOutlined />}>
+      <Menu.Item key="2" icon={<DeleteOutlined />} onClick={handleDeleteClick}>
         Delete task
       </Menu.Item>
     </Menu>
@@ -29,7 +34,9 @@ const TaskContainer = ({ task }) => {
       <header className="w-full flex items-start justify-between">
         <Checkbox onChange={onChange}>
           <h4 className="text-lg text-semibold break-normal sm:break-words md:break-all lg:truncate xl:break-normal pl-3 m-0 text-light_primary dark:text-dark_primary">
-            {task.title}
+            <span className={finished ? "line-through" : "no-underline"}>
+              {task.title}
+            </span>
           </h4>
         </Checkbox>
         <Dropdown overlay={menu} placement="bottomRight">
