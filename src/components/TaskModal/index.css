@@ -1,3 +1,30 @@
+.ant-modal-content, .ant-modal-header {
+  @apply bg-light_background dark:bg-dark_sub_container text-light_primary dark:text-dark_primary;
+}
+.ant-modal-title {
+  @apply text-light_primary dark:text-dark_primary;
+}
+.ant-input  {
+  @apply bg-light_background dark:bg-dark_container dark:border-dark_border dark:text-dark_primary;
+}
+.ant-modal-header {
+  @apply border-light_border dark:border-dark_border;
+}
+.ant-modal-footer {
+  @apply border-light_border dark:border-dark_border;
+}
+.ant-modal-close-x .ant-modal-close-icon {
+  @apply text-light_tertiary dark:text-dark_tertiary;
+}
+.ant-btn-primary {
+  @apply bg-accent dark:text-dark_primary;
+}
+.ant-btn-primary:hover {
+  @apply bg-accent hover:opacity-80;
+}
+.ant-modal-footer .ant-btn:first-child, .ant-modal-close-x {
+  @apply bg-transparent text-light_primary dark:text-dark_primary border-0 hover:bg-light_container dark:hover:bg-dark_secondary_button;
+}
 .ant-picker {
   @apply bg-light_background dark:bg-dark_container dark:border-dark_border;
 }

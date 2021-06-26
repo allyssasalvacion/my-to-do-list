@@ -2,7 +2,7 @@ import { Menu, Button, Dropdown, Checkbox, message } from "antd";
 import { MenuOutlined, DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import "./index.css";
 
-const TaskContainer = ({ task, note }) => {
+const TaskContainer = ({ task }) => {
   function onChange(e) {
     e.target.checked
       ? message.success("Task checked")
@@ -29,7 +29,7 @@ const TaskContainer = ({ task, note }) => {
       <header className="w-full flex items-start justify-between">
         <Checkbox onChange={onChange}>
           <h4 className="text-lg text-semibold break-normal sm:break-words md:break-all lg:truncate xl:break-normal pl-3 m-0 text-light_primary dark:text-dark_primary">
-            {task}
+            {task.title}
           </h4>
         </Checkbox>
         <Dropdown overlay={menu} placement="bottomRight">
@@ -38,7 +38,7 @@ const TaskContainer = ({ task, note }) => {
       </header>
       <div className="w-full py-2 px-4 h-12 overflow-y-auto scrolling-auto rounded bg-light_sub_container dark:bg-dark_sub_container border border-light_border dark:border-dark_border">
         <p className="text-light_tertiary dark:text-dark_tertiary font-normal m-0">
-          {note}
+          {task.note}
         </p>
       </div>
     </div>

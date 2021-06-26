@@ -4,18 +4,15 @@ import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "./components/ThemeContext";
 import Background from "./components/Background";
-import Sidebar from "./components/Sidebar";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <Background>
-        <Sidebar />
-        <main className="w-full relative overflow-y-auto">
-          <App />
-        </main>
-      </Background>
-    </ThemeProvider>
-  </React.StrictMode>,
+  <ThemeProvider>
+    <Background>
+      {/* <Sidebar /> */}
+      <main className="w-full my-12 mx-24 relative overflow-y-hidden">
+        <App />
+      </main>
+    </Background>
+  </ThemeProvider>,
   document.getElementById("root")
 );
