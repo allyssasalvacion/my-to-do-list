@@ -3,6 +3,7 @@ import TaskModal from "../TaskModal/TaskModal";
 
 import { Menu, Button, Dropdown, Checkbox, message } from "antd";
 import { MenuOutlined, DeleteOutlined, EditOutlined } from "@ant-design/icons";
+
 import { db } from "../../firebase-config";
 
 import "./index.css";

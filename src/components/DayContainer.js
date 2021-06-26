@@ -9,16 +9,18 @@ const DayContainer = () => {
   }, []);
 
   const getTasks = () => {
-    db.collection("tasks").onSnapshot(function (querySnapshot) {
-      setTasks(
-        querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          task: doc.data().task,
-          note: doc.data().note,
-          isFinished: doc.data().isFinished,
-        }))
-      );
-    });
+    db.collection("tasks")
+      .orderBy("timestamp", "desc")
+      .onSnapshot(function (querySnapshot) {
+        setTasks(
+          querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            task: doc.data().task,
+            note: doc.data().note,
+            isFinished: doc.data().isFinished,
+          }))
+        );
+      });
   };
 
   return (

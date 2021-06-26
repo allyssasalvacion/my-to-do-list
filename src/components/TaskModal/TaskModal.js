@@ -1,8 +1,10 @@
 import React from "react";
 import { Modal, Input, Form } from "antd";
-import "./index.css";
-import { db } from "/Users/allyssaalbores/Documents/Allyssa/01_to-do-list/src/firebase-config.js";
+
+import { db } from "../../firebase-config";
 import firebase from "firebase";
+
+import "./index.css";
 
 const { TextArea } = Input;
 
