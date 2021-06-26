@@ -9,7 +9,7 @@ ReactDOM.render(
   <ThemeProvider>
     <Background>
       {/* <Sidebar /> */}
-      <main className="w-full my-12 mx-24 relative overflow-y-hidden">
+      <main className="lg:my-12 lg:mx-24 md:my-6 md:mx-12 overflow-y-hidden">
         <App />
       </main>
     </Background>

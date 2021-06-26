@@ -7,20 +7,15 @@ import Toggle from "./components/ThemeToggle";
 
 function App() {
   const [visible, setVisible] = React.useState(false);
-  const [tasks, setTasksList] = React.useState([]);
 
   const showModal = () => {
     setVisible(true);
   };
 
-  const saveTask = (task) => {
-    setTasksList([...tasks, task]);
-  };
-
   return (
     <div className="flex flex-col p-8 mx-auto font-inter w-full h-full">
-      <div className="flex justify-between mb-8">
-        <h3 className="font-bold text-4xl m-0 text-light_primary dark:text-dark_primary">
+      <div className="flex justify-between items-center mb-4 lg:mb-8">
+        <h3 className="font-bold text-xl lg:text-4xl md:text-3xl sm:text-xl m-0 mr-12 text-light_primary dark:text-dark_primary">
           こんにちは、アリッサ 🌼
         </h3>
         <div className="flex gap-8 items-center">
@@ -37,17 +32,13 @@ function App() {
           </Button>
         </div>
         {visible ? (
-          <TaskModal
-            visible={visible}
-            setVisible={setVisible}
-            saveTask={saveTask}
-          />
+          <TaskModal visible={visible} setVisible={setVisible} />
         ) : (
           <></>
         )}
       </div>
       <div className="flex flex-col gap-20 justify-center items-center h-full overflow-y-auto">
-        <DayContainer tasksList={tasks} />
+        <DayContainer />
       </div>
     </div>
   );
