@@ -9,7 +9,7 @@ import "./index.css";
 
 const { TextArea } = Input;
 
-const TaskModal = ({ visible, setVisible, editMode, task }) => {
+const TaskModal = ({ isVisible, setVisible, editMode, task }) => {
   const [form] = Form.useForm();
 
   const handleOk = () => {
@@ -29,14 +29,14 @@ const TaskModal = ({ visible, setVisible, editMode, task }) => {
     });
   };
 
-  const onSubmit = (values) => {
+  const onSubmit = ({ title, note }) => {
     setVisible(false);
     message.success("Task created");
     db.collection("tasks").add({
       isFinished: false,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      task: values.title,
-      note: values.note === undefined ? "No note available" : values.note,
+      task: title,
+      note: note || "No note available",
     });
   };
 
@@ -44,10 +44,14 @@ const TaskModal = ({ visible, setVisible, editMode, task }) => {
     console.log("Failed:", errorInfo);
   };
 
+  const getInitialFormValues = () => {
+    return { title: task.task, note: task.note };
+  };
+
   return (
     <Modal
       title="Add task"
-      visible={visible}
+      visible={isVisible}
       onOk={handleOk}
       onCancel={handleCancel}
     >
@@ -55,7 +59,7 @@ const TaskModal = ({ visible, setVisible, editMode, task }) => {
         form={form}
         onFinish={editMode ? onUpdate : onSubmit}
         onFinishFailed={onFinishFailed}
-        initialValues={editMode ? { title: task.task, note: task.note } : ""}
+        initialValues={editMode ? getInitialFormValues() : ""}
         name="userForm"
       >
         <p className="text-light_primary dark:text-dark_primary">Title</p>
@@ -68,7 +72,7 @@ const TaskModal = ({ visible, setVisible, editMode, task }) => {
             },
           ]}
         >
-          <Input size="large" maxLength={30} autoComplete="off" />
+          <Input size="large" maxLength={32} autoComplete="off" />
         </Form.Item>
         <p className="mt-8 text-light_primary dark:text-dark_primary">Note</p>
         <Form.Item name="note">

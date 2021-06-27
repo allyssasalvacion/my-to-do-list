@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Button } from "antd";
 import TaskModal from "./components/TaskModal/TaskModal";
@@ -6,7 +6,7 @@ import DayContainer from "./components/DayContainer";
 import Toggle from "./components/ThemeToggle";
 
 function App() {
-  const [visible, setVisible] = React.useState(false);
+  const [isVisible, setVisible] = useState(false);
 
   const showModal = () => {
     setVisible(true);
@@ -31,8 +31,8 @@ function App() {
             Add task
           </Button>
         </div>
-        {visible ? (
-          <TaskModal visible={visible} setVisible={setVisible} />
+        {isVisible ? (
+          <TaskModal isVisible={isVisible} setVisible={setVisible} />
         ) : (
           <></>
         )}

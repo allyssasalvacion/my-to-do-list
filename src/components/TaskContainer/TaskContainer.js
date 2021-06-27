@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TaskModal from "../TaskModal/TaskModal";
 
 import { Menu, Button, Dropdown, Checkbox, message } from "antd";
@@ -9,14 +9,14 @@ import { db } from "../../firebase-config";
 import "./index.css";
 
 const TaskContainer = ({ task }) => {
-  const [visible, setVisible] = React.useState(false);
+  const [isVisible, setVisible] = useState(false);
 
   function onChange() {
     db.collection("tasks").doc(task.id).update({
       isFinished: !task.isFinished,
     });
     task.isFinished
-      ? message.success("Hmmm, why?")
+      ? message.success("Task unchecked")
       : message.success("Congrats, you have finished a task!");
   }
 
@@ -59,9 +59,9 @@ const TaskContainer = ({ task }) => {
           {task.note}
         </p>
       </div>
-      {visible ? (
+      {isVisible ? (
         <TaskModal
-          visible={visible}
+          isVisible={isVisible}
           setVisible={setVisible}
           editMode={true}
           task={task}

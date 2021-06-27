@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import TaskContainer from "./TaskContainer/TaskContainer";
-import { db } from "/Users/allyssaalbores/Documents/Allyssa/01_to-do-list/src/firebase-config.js";
+import { db } from "./../firebase-config";
 
 const DayContainer = () => {
-  const [tasks, setTasks] = React.useState([]);
+  const [tasks, setTasks] = useState([]);
+
   useEffect(() => {
     getTasks();
   }, []);
