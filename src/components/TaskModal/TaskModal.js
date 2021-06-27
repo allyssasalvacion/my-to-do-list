@@ -1,8 +1,9 @@
 import React from "react";
-import { Modal, Input, Form } from "antd";
+import { Modal, Input, Form, message } from "antd";
 
 import { db } from "../../firebase-config";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 import "./index.css";
 
@@ -21,6 +22,7 @@ const TaskModal = ({ visible, setVisible, editMode, task }) => {
 
   const onUpdate = (values) => {
     setVisible(false);
+    message.success("Task updated");
     db.collection("tasks").doc(task.id).update({
       task: values.title,
       note: values.note,
@@ -29,6 +31,7 @@ const TaskModal = ({ visible, setVisible, editMode, task }) => {
 
   const onSubmit = (values) => {
     setVisible(false);
+    message.success("Task created");
     db.collection("tasks").add({
       isFinished: false,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
