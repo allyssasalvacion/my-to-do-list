@@ -54,7 +54,7 @@ const TaskContainer = ({ task }) => {
           <Button type="link" shape="circle" icon={<MenuOutlined />} />
         </Dropdown>
       </header>
-      <div className="w-full py-3 px-4 h-14 overflow-y-auto scrolling-auto rounded bg-light_sub_container dark:bg-dark_sub_container border border-light_border dark:border-dark_border">
+      <div className="w-full py-3 px-4 h-14 whitespace-pre-line overflow-y-auto scrolling-auto rounded bg-light_sub_container dark:bg-dark_sub_container border border-light_border dark:border-dark_border">
         <p className="text-light_tertiary dark:text-dark_tertiary font-normal m-0">
           {task.note}
         </p>
