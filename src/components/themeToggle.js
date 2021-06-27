@@ -10,6 +10,7 @@ const Toggle = () => {
       <Switch
         checkedChildren="🌼"
         unCheckedChildren="🌙"
+        checked={theme === "dark" ? true : false}
         className="cursor-pointer"
         style={{ background: "#582be8" }}
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
