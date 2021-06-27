@@ -17,7 +17,7 @@ const TaskContainer = ({ task }) => {
     });
     task.isFinished
       ? message.success("Task unchecked")
-      : message.success("Congrats, you have finished a task!");
+      : message.success("Congrats, you finished a task!");
   }
 
   function handleEditClick() {
