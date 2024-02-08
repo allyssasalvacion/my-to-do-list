@@ -1,13 +1,11 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "./components/ThemeContext";
 import Background from "./components/Background";
 
-const root = createRoot(document.getElementById("root"));
-
-root.render(
+ReactDOM.render(
   <ThemeProvider>
     <Background>
       {/* <Sidebar /> */}
@@ -15,5 +13,6 @@ root.render(
         <App />
       </main>
     </Background>
-  </ThemeProvider>
+  </ThemeProvider>,
+  document.getElementById("root")
 );
