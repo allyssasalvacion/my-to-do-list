@@ -2,8 +2,8 @@ import React from "react";
 import { Modal, Input, Form, message } from "antd";
 
 import { db } from "../../firebase-config";
-import firebase from "firebase/app";
-import "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 
 import "./index.css";
 
@@ -50,8 +50,8 @@ const TaskModal = ({ isVisible, setVisible, editMode, task }) => {
 
   return (
     <Modal
-      title="Add task"
-      visible={isVisible}
+      title='Add task'
+      open={isVisible}
       onOk={handleOk}
       onCancel={handleCancel}
     >
@@ -60,11 +60,11 @@ const TaskModal = ({ isVisible, setVisible, editMode, task }) => {
         onFinish={editMode ? onUpdate : onSubmit}
         onFinishFailed={onFinishFailed}
         initialValues={editMode ? getInitialFormValues() : ""}
-        name="userForm"
+        name='userForm'
       >
-        <p className="text-light_primary dark:text-dark_primary">Title</p>
+        <p className='text-light_primary dark:text-dark_primary'>Title</p>
         <Form.Item
-          name="title"
+          name='title'
           rules={[
             {
               required: true,
@@ -72,16 +72,16 @@ const TaskModal = ({ isVisible, setVisible, editMode, task }) => {
             },
           ]}
         >
-          <Input size="large" maxLength={32} autoComplete="off" />
+          <Input size='large' maxLength={32} autoComplete='off' />
         </Form.Item>
-        <p className="mt-8 text-light_primary dark:text-dark_primary">Note</p>
-        <Form.Item name="note">
+        <p className='mt-8 text-light_primary dark:text-dark_primary'>Note</p>
+        <Form.Item name='note'>
           <TextArea
             showCount
             maxLength={1000}
-            size="large"
-            className="mb-5"
-            autoComplete="off"
+            size='large'
+            className='mb-5'
+            autoComplete='off'
           />
         </Form.Item>
       </Form>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TaskModal from "../TaskModal/TaskModal";
 
-import { Menu, Button, Dropdown, Checkbox, message } from "antd";
-import { MenuOutlined, DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { Button, Dropdown, Checkbox, message } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 
 import { db } from "../../firebase-config";
 
@@ -29,16 +29,16 @@ const TaskContainer = ({ task }) => {
     message.success("Task deleted");
   }
 
-  const menu = (
-    <Menu>
-      <Menu.Item key="1" icon={<EditOutlined />} onClick={handleEditClick}>
-        Edit task
-      </Menu.Item>
-      <Menu.Item key="2" icon={<DeleteOutlined />} onClick={handleDeleteClick}>
-        Delete task
-      </Menu.Item>
-    </Menu>
-  );
+  const items = [
+    {
+      key: "1",
+      label: <div onClick={handleEditClick}>Edit task</div>,
+    },
+    {
+      key: "2",
+      label: <div onClick={handleDeleteClick}>Delete task</div>,
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-5 p-6 rounded border bg-light_container dark:bg-dark_container border-light_border dark:border-dark_border">
@@ -50,7 +50,7 @@ const TaskContainer = ({ task }) => {
             </span>
           </h4>
         </Checkbox>
-        <Dropdown overlay={menu} placement="bottomRight">
+        <Dropdown menu={{ items }} placement="bottomRight">
           <Button type="link" shape="circle" icon={<MenuOutlined />} />
         </Dropdown>
       </header>
