@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import ThemeProvider from "./components/ThemeContext";
+import ThemeProvider from "./components/ThemeProvider";
 import Background from "./components/Background";
 
 const root = createRoot(document.getElementById("root"));

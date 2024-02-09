@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "./ThemeProvider";
 import { Switch } from "antd";
 
 const Toggle = () => {
