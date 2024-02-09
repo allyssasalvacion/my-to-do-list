@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./App.css";
 import "antd/dist/reset.css";
-import { Button } from "antd";
+import { Button, Switch } from "antd";
 import TaskModal from "./components/TaskModal/TaskModal";
 import DayContainer from "./components/DayContainer";
-import ThemeToggle from "./components/ThemeToggle";
+import { ThemeContext } from "./components/ThemeProvider";
 
 function App() {
   const [isVisible, setVisible] = useState(false);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const showModal = () => {
     setVisible(true);
@@ -20,7 +21,16 @@ function App() {
           Hello, Allyssa 🌼
         </h3>
         <div className="flex gap-8 items-center">
-          <ThemeToggle />
+          <div className="transition duration-500 ease-in-out rounded-full">
+            <Switch
+              checkedChildren="🌼"
+              unCheckedChildren="🌙"
+              checked={theme === "dark" ? true : false}
+              className="cursor-pointer"
+              style={{ background: "#582be8" }}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            />
+          </div>
           <Button
             type="primary"
             className="hover:opacity-80"
