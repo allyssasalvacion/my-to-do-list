@@ -5,7 +5,10 @@
   @apply text-light_primary dark:text-dark_primary;
 }
 .ant-input  {
-  @apply bg-light_background dark:bg-dark_container dark:border-dark_border dark:text-dark_primary;
+  @apply bg-light_background dark:bg-dark_container dark:border-dark_border dark:text-dark_primary !important;
+}
+.ant-input-textarea-affix-wrapper {
+  @apply dark:border-dark_border;
 }
 .ant-modal-header {
   @apply border-light_border dark:border-dark_border;

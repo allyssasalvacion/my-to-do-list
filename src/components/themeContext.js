@@ -17,7 +17,7 @@ const getInitialTheme = () => {
 
 export const ThemeContext = createContext();
 
-export const ThemeProvider = ({ initialTheme, children }) => {
+const ThemeProvider = ({ initialTheme, children }) => {
   const [theme, setTheme] = useState(getInitialTheme);
   const rawSetTheme = (rawTheme) => {
     const root = window.document.documentElement;
@@ -41,3 +41,5 @@ export const ThemeProvider = ({ initialTheme, children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export default ThemeProvider;
