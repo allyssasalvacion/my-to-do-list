@@ -1,31 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: {
-    content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-    safelist: [
-      "accent",
-      "red",
-      "dark_background",
-      "dark_container",
-      "dark_sub_container",
-      "dark_input",
-      "dark_secondary_button",
-      "dark_primary",
-      "dark_secondary",
-      "dark_tertiary",
-      "dark_border",
-      "light_background",
-      "light_container",
-      "light_sub_container",
-      "light_input",
-      "light_secondary_button",
-      "light_primary",
-      "light_secondary",
-      "light_tertiary",
-      "light_border",
-    ],
-  },
+  content: ["./src/**/*.{html,js}"],
   darkMode: "class",
   theme: {
     colors: {
